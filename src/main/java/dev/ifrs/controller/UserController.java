@@ -6,13 +6,13 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
-import dev.ifrs.usecase.IUser;
+import dev.ifrs.usecase.IUserUsecase;
 import dev.ifrs.view.RegisterUserView;
 
 @Path("/user")
 public class UserController {
     @Inject
-    IUser userService;
+    IUserUsecase userService;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

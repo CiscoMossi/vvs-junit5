@@ -1,5 +1,5 @@
 /home/pw2/dev/own/usuario/src/main/java/dev/ifrs/controller/UserController.java
-/home/pw2/dev/own/usuario/src/main/java/dev/ifrs/usecase/IUser.java
+/home/pw2/dev/own/usuario/src/main/java/dev/ifrs/usecase/IUserUsecase.java
 /home/pw2/dev/own/usuario/src/main/java/dev/ifrs/view/RegisterUserView.java
 /home/pw2/dev/own/usuario/src/main/java/dev/ifrs/service/UserService.java
 /home/pw2/dev/own/usuario/src/main/java/dev/ifrs/GreetingResource.java

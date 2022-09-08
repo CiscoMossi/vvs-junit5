@@ -10,10 +10,10 @@ import org.junit.jupiter.api.Test;
 
 import dev.ifrs.entity.User;
 import dev.ifrs.service.UserService;
-import dev.ifrs.usecase.IUser;
+import dev.ifrs.usecase.IUserUsecase;
 
 public class UserTest {
-    IUser uc;
+    IUserUsecase uc;
 
     @BeforeEach
     void beforeEach() {
@@ -35,11 +35,11 @@ public class UserTest {
     @Test
     void registerFail() {
         String name = "name";
-        String password = "pass";
+        String invalidPassword = "pass";
 
         IllegalArgumentException thrown = assertThrows(
            IllegalArgumentException.class,
-           () -> uc.registerUser(name, password),
+           () -> uc.registerUser(name, invalidPassword),
            "Deveria estourar IllegalArgumentException para senha invalida"
         );
 
