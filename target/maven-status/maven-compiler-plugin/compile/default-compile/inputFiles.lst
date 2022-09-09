@@ -1,6 +1,9 @@
 /home/pw2/dev/own/vvs-junit5/src/main/java/dev/ifrs/service/UserService.java
+/home/pw2/dev/own/vvs-junit5/src/main/java/dev/ifrs/repository/IRepository.java
 /home/pw2/dev/own/vvs-junit5/src/main/java/dev/ifrs/entity/User.java
 /home/pw2/dev/own/vvs-junit5/src/main/java/dev/ifrs/view/RegisterUserView.java
+/home/pw2/dev/own/vvs-junit5/src/main/java/dev/ifrs/repository/Repository.java
 /home/pw2/dev/own/vvs-junit5/src/main/java/dev/ifrs/GreetingResource.java
 /home/pw2/dev/own/vvs-junit5/src/main/java/dev/ifrs/usecase/IUserUsecase.java
+/home/pw2/dev/own/vvs-junit5/src/main/java/dev/ifrs/factory/UserFactory.java
 /home/pw2/dev/own/vvs-junit5/src/main/java/dev/ifrs/controller/UserController.java
