@@ -4,42 +4,49 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.when;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import dev.ifrs.entity.User;
+import dev.ifrs.repository.IRepository;
 import dev.ifrs.service.UserService;
-import dev.ifrs.usecase.IUserUsecase;
 
+@ExtendWith(MockitoExtension.class)
 public class UserTest {
-    IUserUsecase uc;
+    @Mock
+    IRepository repo;
 
-    @BeforeEach
-    void beforeEach() {
-        uc = new UserService();
-    }
+    @InjectMocks
+    UserService uc;
 
     @Test
     void registerSuccess() {
         String name = "name";
         String password = "password";
+        User mockedUser = new User(name, password);
 
-        User user = uc.registerUser(name, password);
+        when(repo.persistUser(mockedUser)).thenReturn(mockedUser);
+        User user = uc.registerUser(mockedUser);
 
         assertNotNull(user);
-        assertEquals(user.getName(), name);
-        assertEquals(user.getPassword(), password);
+        assertEquals(name, user.getName());
+        assertEquals(password, user.getPassword());
     }
 
     @Test
     void registerFail() {
         String name = "name";
         String invalidPassword = "pass";
+        User mockedUser = new User(name, invalidPassword);
 
         IllegalArgumentException thrown = assertThrows(
            IllegalArgumentException.class,
-           () -> uc.registerUser(name, invalidPassword),
+           () -> uc.registerUser(mockedUser),
            "Deveria estourar IllegalArgumentException para senha invalida"
         );
 
