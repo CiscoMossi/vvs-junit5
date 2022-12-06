@@ -20,8 +20,10 @@ public class UserController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/register")
     public void register(RegisterUserView registerUser) {
-        User user = userFactory.getUser(registerUser);
-
-        userService.registerUser(user);
+        if (registerUser != null) {
+            User user = userFactory.getUser(registerUser);
+    
+            userService.registerUser(user);
+        }
     }
 }
