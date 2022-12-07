@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.containsString;
 
 @QuarkusTest
-public class UserControllerTest {
+class UserControllerTest {
   @Test
   void testRegisterInvalidUser() {
       given()

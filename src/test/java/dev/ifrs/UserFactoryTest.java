@@ -8,7 +8,7 @@ import dev.ifrs.entity.User;
 import dev.ifrs.factory.UserFactory;
 import dev.ifrs.view.RegisterUserView;
 
-public class UserFactoryTest {
+class UserFactoryTest {
     @Test
     void createsUserFromRegisterUserView() {
         RegisterUserView mockedUser = new RegisterUserView();

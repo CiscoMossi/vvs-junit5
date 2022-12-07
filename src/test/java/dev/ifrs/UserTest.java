@@ -20,7 +20,7 @@ import dev.ifrs.repository.IRepository;
 import dev.ifrs.service.UserService;
 
 @ExtendWith(MockitoExtension.class)
-public class UserTest {
+class UserTest {
     @Mock
     IRepository repo;
 
