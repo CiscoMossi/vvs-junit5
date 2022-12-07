@@ -3,6 +3,7 @@ package dev.ifrs.controller;
 import java.net.URI;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.Consumes;
@@ -23,18 +24,15 @@ public class UserController {
     @Inject
     IUserUsecase userService;
 
-    @Inject
-    UserFactory userFactory;
-
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/register")
-    public Response register(RegisterUserView registerUser) {
+    public Response register(@Valid RegisterUserView registerUser) {
         try {
-            if (registerUser == null) throw new BadRequestException("Usuário Invalido");
+            if (registerUser == null) throw new BadRequestException("Usuário inválido");
             
-            User user = userFactory.getUser(registerUser);
+            User user = UserFactory.getUser(registerUser);
     
             userService.registerUser(user);
             URI userCreationPath = URI.create(user.getName());
