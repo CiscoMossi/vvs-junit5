@@ -49,7 +49,7 @@ public class UserTest {
         BadRequestException thrown = assertThrows(
             BadRequestException.class,
            () -> uc.registerUser(mockedUser),
-           "Deveria estourar IllegalArgumentException para senha invalida"
+           "Deveria estourar BadRequestException para senha invalida"
         );
 
         assertTrue(thrown.getMessage().equalsIgnoreCase("Senha Invalida"));
