@@ -21,7 +21,11 @@ public class UserService implements IUserUsecase {
 
     @Override
     public User registerUser(User user) {
-        if (!isPasswordValid(user.getPassword())) throw new BadRequestException("Senha Invalida");
+        if (!isPasswordValid(user.getPassword())) throw new BadRequestException("Senha inválida");
+
+        if (!user.getPasswordConfirmation().equals(user.getPassword())) {
+            throw new BadRequestException("As senhas não conferem");
+        }
 
         user = repository.persistUser(user);
         return user;
