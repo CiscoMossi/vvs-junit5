@@ -14,6 +14,8 @@ public class UserService implements IUserUsecase {
     private IRepository repository;
 
     public boolean isPasswordValid(String password) {
+        if (password == null) return false;
+
         return password.length() >= 8;
     }
 

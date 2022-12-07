@@ -54,4 +54,19 @@ public class UserTest {
 
         assertTrue(thrown.getMessage().equalsIgnoreCase("Senha Invalida"));
     }
+
+    @Test
+    void registerFailNullPassword() {
+        String name = "name";
+        String invalidPassword = null;
+        User mockedUser = new User(name, invalidPassword);
+
+        BadRequestException thrown = assertThrows(
+            BadRequestException.class,
+           () -> uc.registerUser(mockedUser),
+           "Deveria estourar BadRequestException para senha invalida"
+        );
+
+        assertTrue(thrown.getMessage().equalsIgnoreCase("Senha Invalida"));
+    }
 }
