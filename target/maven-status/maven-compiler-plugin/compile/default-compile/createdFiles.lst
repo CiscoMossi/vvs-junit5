@@ -1,0 +1,8 @@
+dev/ifrs/service/UserService.class
+dev/ifrs/entity/User.class
+dev/ifrs/repository/Repository.class
+dev/ifrs/view/RegisterUserView.class
+dev/ifrs/factory/UserFactory.class
+dev/ifrs/repository/IRepository.class
+dev/ifrs/usecase/IUserUsecase.class
+dev/ifrs/controller/UserController.class
