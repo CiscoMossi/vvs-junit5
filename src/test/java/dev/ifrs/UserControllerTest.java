@@ -9,7 +9,7 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class UserControllerTest {
   @Test
-  public void testCreateInvalidUser() {
+  void testRegisterInvalidUser() {
       given()
         .when()
         .header("Content-Type", "application/json")
@@ -20,7 +20,7 @@ public class UserControllerTest {
   }
 
   @Test
-  public void testCreateInvalidPassword() {
+  void testRegisterInvalidPassword() {
       given()
         .when()
         .header("Content-Type", "application/json")
@@ -32,7 +32,17 @@ public class UserControllerTest {
   }
 
   @Test
-  public void testCreateValidUser() {
+  void testRegisterInvalidBody() {
+      given()
+        .when()
+        .body("{\"name\":\"Teste\",\"password\":\"123\"}")
+        .post("/user/register")
+        .then()
+           .statusCode(415);
+  }
+
+  @Test
+  void testRegisterValidUser() {
       given()
         .when()
         .header("Content-Type", "application/json")
