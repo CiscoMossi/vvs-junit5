@@ -2,11 +2,15 @@ package dev.ifrs.entity;
 
 public class User {
     private String name;
+    private String email;
     private String password;
+    private String passwordConfirmation;
 
-    public User(String name, String password) {
+    public User(String name, String email, String password, String passwordConfirmation) {
         this.name = name;
+        this.email = email;
         this.password = password;
+        this.passwordConfirmation = passwordConfirmation;
     }
 
     public String getName() {
@@ -17,11 +21,27 @@ public class User {
         this.name = name;
     }
 
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getPassword() {
         return this.password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPasswordConfirmation() {
+        return this.passwordConfirmation;
+    }
+
+    public void setPasswordConfirmation(String passwordConfirmation) {
+        this.passwordConfirmation = passwordConfirmation;
     }
 }
