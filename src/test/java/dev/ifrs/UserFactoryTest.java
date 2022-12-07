@@ -10,7 +10,7 @@ import dev.ifrs.view.RegisterUserView;
 
 public class UserFactoryTest {
     @Test
-    void registerSuccess() {
+    void createsUserFromRegisterUserView() {
         RegisterUserView mockedUser = new RegisterUserView();
         mockedUser.name = "name";
         mockedUser.email = "email";
