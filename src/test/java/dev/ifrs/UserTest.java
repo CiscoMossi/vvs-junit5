@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
+import javax.ws.rs.BadRequestException;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -44,8 +46,8 @@ public class UserTest {
         String invalidPassword = "pass";
         User mockedUser = new User(name, invalidPassword);
 
-        IllegalArgumentException thrown = assertThrows(
-           IllegalArgumentException.class,
+        BadRequestException thrown = assertThrows(
+            BadRequestException.class,
            () -> uc.registerUser(mockedUser),
            "Deveria estourar IllegalArgumentException para senha invalida"
         );
