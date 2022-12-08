@@ -73,22 +73,22 @@ class UserTest {
         assertTrue(thrown.getMessage().equalsIgnoreCase("Senha inválida"));
     }
 
-    @Test
-    void registerFailNullPassword() {
-        String name = "name";
-        String email = "email";
-        String password = null;
-        String passwordConfirmation = null;
-        User mockedUser = new User(name, email, password, passwordConfirmation);
+    // @Test
+    // void registerFailNullPassword() {
+    //     String name = "name";
+    //     String email = "email";
+    //     String password = null;
+    //     String passwordConfirmation = null;
+    //     User mockedUser = new User(name, email, password, passwordConfirmation);
 
-        BadRequestException thrown = assertThrows(
-            BadRequestException.class,
-           () -> uc.registerUser(mockedUser),
-           "Deveria estourar BadRequestException para Senha inválida"
-        );
+    //     BadRequestException thrown = assertThrows(
+    //         BadRequestException.class,
+    //        () -> uc.registerUser(mockedUser),
+    //        "Deveria estourar BadRequestException para Senha inválida"
+    //     );
 
-        assertTrue(thrown.getMessage().equalsIgnoreCase("Senha inválida"));
-    }
+    //     assertTrue(thrown.getMessage().equalsIgnoreCase("Senha inválida"));
+    // }
 
     @Test
     void registerFailWrongPasswordConfirmation() {
